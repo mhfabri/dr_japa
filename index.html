@@ -6,9 +6,10 @@
   <meta name="theme-color" content="#d50918">
   <meta name="description" content="Black Friday Pet Shop Dr. Japa: ofertas especiais em rações e petiscos. Av. Papa João XXIII, 15 - Suíssa, Ribeirão Pires.">
   <title>Black Friday | Pet Shop Dr. Japa</title>
+  
   <style>
-    :root{--red:#d50918;--red2:#a9000c;--ink:#111;--paper:#fff;--muted:#686868;--line:#e9e9e9;--cream:#fff8f6}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:#fff}
+    :root{--red:#d50918;--red2:#a9000c;--ink:#111;--paper:#111;--muted:#686868;--line:#e9e9e9;--cream:#444}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:#fff;background:#111}
     a{color:inherit;text-decoration:none}.topline{height:7px;background:linear-gradient(90deg,#111 0 18%,var(--red) 18% 82%,#111 82%)}
     header{background:#fff;border-bottom:1px solid #eee;position:sticky;top:0;z-index:10}
     .nav{max-width:1160px;margin:auto;padding:10px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
@@ -55,7 +56,8 @@
     .price small{display:block;color:#666;font-size:10px;font-weight:800;margin-bottom:5px}.price strong{font-size:22px;letter-spacing:-.5px}.price.best strong{color:var(--red)}
     .saving{font-size:11px;color:#148044;font-weight:800;margin-top:10px}
     .treat-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:20px;margin-top:22px}
-    .treat-card{border:1px solid var(--line);border-radius:10px;padding:22px;display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center}
+    .treat-card{border:1px solid var(--line);border-radius:10px;padding:22px;display:grid;grid-template-columns:180px 1fr;gap:18px;align-items:center;}
+    .treat-card img{max-width: 100%;}
     .treat-card h3{margin:0 0 7px;font-size:20px}.treat-card p{margin:0 0 14px;color:var(--muted);font-size:13px}
     .treat-prices{display:flex;flex-wrap:wrap;gap:7px}.pill{background:#fff0f0;color:#a9000c;border:1px solid #ffd4d7;padding:8px 10px;border-radius:5px;font-size:12px;font-weight:900}
     .notice{background:#111;color:#fff;border-radius:10px;padding:24px;display:flex;flex-direction:column;justify-content:center}
@@ -81,7 +83,7 @@
 <header>
   <nav class="nav">
     <a class="brand" href="#inicio" aria-label="Pet Shop Dr. Japa - início">
-      <img src="assets/logo-dr-japa.jpg" alt="Logo Dr. Japa com o mascote da fachada">
+      <img src="assets/logo-dr-japa.png" alt="Logo Dr. Japa com o mascote da fachada">
     </a>
     <div class="navlinks"><a href="#ofertas">OFERTAS</a><a href="#petiscos">PETISCOS</a><a href="#loja">A LOJA</a><a href="#contato">CONTATO</a></div>
     <a class="nav-cta" href="#ofertas">VER PROMOÇÕES ↓</a>
@@ -97,7 +99,7 @@
       <p>Ofertas especiais em rações e petiscos para cuidar de quem faz parte da família. Aproveite os preços de Black Friday do Pet Shop Dr. Japa!</p>
       <div class="hero-actions"><a class="btn btn-dark" href="#ofertas">CONFERIR OFERTAS</a><a class="btn btn-light" href="tel:+551148235733">LIGAR PARA A LOJA</a></div>
     </div>
-    <div class="hero-logo"><img src="assets/logo-dr-japa.jpg" alt="Fachada e identidade visual original do Pet Shop Dr. Japa"></div>
+    <div class="hero-logo"><img src="assets/logo-dr-japa.png" alt="Fachada e identidade visual original do Pet Shop Dr. Japa"></div>
   </div>
   <div class="hero-stamp">SUÍSSA • RIBEIRÃO PIRES</div>
 </section>
@@ -113,13 +115,13 @@
       </div>
     </article>
     <article class="product">
-      <div class="product-visual"><span class="tag">OFERTA BLACK</span><div class="pack-art"><b>MultiDog</b><strong>BATATA DOCE</strong><span class="dog">🐕</span><small>23% DE PROTEÍNA<br>15 kg</small></div></div>
+      <div class="product-visual"><span class="tag">OFERTA BLACK</span><img src="/assets/multidog-batata-doce-oficial.jpg" alt="Saco Multidog Premium Especial Power Energy 30% de proteínas, 15 kg"></div>
       <div class="product-info"><h3>Multidog Batata Doce</h3><p class="desc">23% de proteína • Embalagem de 15 kg</p>
         <div class="price-row"><div class="price"><small>1 SACO</small><strong>R$ 135</strong></div><div class="price best"><small>2 SACOS</small><strong>R$ 250</strong></div></div><div class="saving">Economize R$ 20 levando 2 sacos</div>
       </div>
     </article>
     <article class="product">
-      <div class="product-visual"><span class="tag">OFERTA BLACK</span><div class="pack-art"><b>MAX</b><strong>VITA</strong><span class="dog">🐶</span><small>RAÇAS PEQUENAS<br>10 kg</small></div></div>
+      <div class="product-visual"><span class="tag">OFERTA BLACK</span><img src="/assets/max-vita-racas-pequenas-oficial.png" alt="Saco Multidog Premium Especial Power Energy 30% de proteínas, 15 kg"></div>
       <div class="product-info"><h3>Max Vita Raças Pequenas</h3><p class="desc">Alimento para cães de raças pequenas • 10 kg</p>
         <div class="price-row"><div class="price"><small>1 SACO</small><strong>R$ 95</strong></div><div class="price best"><small>2 SACOS</small><strong>R$ 180</strong></div></div><div class="saving">Economize R$ 10 levando 2 sacos</div>
       </div>
@@ -129,9 +131,9 @@
 
 <section class="section" id="petiscos" style="padding-top:10px">
   <div class="section-head"><div class="kicker">MIMOS PARA SEU COMPANHEIRO</div><h2>Petiscos em promoção</h2><p>Tem opção para cães e gatos. Aproveite os combos!</p></div>
-  <div class="treat-grid">
+  <div>
     <article class="treat-card">
-      <div class="treat-art"><div class="treat-sachet">WANPY<br>CREAMY</div><div class="treat-sachet">WANPY<br>CREAMY</div><div class="treat-sachet">WANPY<br>CREAMY</div></div>
+      <img class="wanpyft" src="/assets/wanpy-creamy-oficial.png" alt="Saco Multidog Premium Especial Power Energy 30% de proteínas, 15 kg">
       <div><h3>Creamy Wanpy</h3><p>Opções para gatos e cachorros. Consulte os sabores disponíveis na loja.</p>
         <div class="treat-prices"><span class="pill">1 un. R$ 5</span><span class="pill">3 un. R$ 10</span><span class="pill">7 un. R$ 20</span><span class="pill">Cães: pacote c/ 5 un. R$ 12</span></div>
       </div>
@@ -142,7 +144,7 @@
 
 <section class="about" id="loja">
   <div class="about-grid">
-    <div class="about-logo"><img src="assets/logo-dr-japa.jpg" alt="Mascote e letreiro vermelho originais do Pet Shop Dr. Japa"></div>
+    <div class="about-logo"><img src="assets/logo-dr-japa.png" alt="Mascote e letreiro vermelho originais do Pet Shop Dr. Japa"></div>
     <div><div class="kicker">TRADIÇÃO NO BAIRRO SUÍSSA</div><h2>Quem ama, cuida. Quem cuida, vem ao Dr. Japa!</h2>
       <p>O Pet Shop Dr. Japa atende tutores de Ribeirão Pires com variedade de rações, petiscos, produtos de higiene, medicamentos e acessórios para os pets. Conte com orientação na hora de escolher o que seu companheiro precisa.</p>
       <div class="features"><div class="feature">🐾 Rações e petiscos</div><div class="feature">🧼 Higiene e cuidados</div><div class="feature">💊 Itens de saúde pet</div><div class="feature">🚚 Opção de entrega</div></div>
@@ -168,6 +170,6 @@
   </div>
 </section>
 </main>
-<footer><b>PET SHOP DR. JAPA</b> • Av. Papa João XXIII, 15 - Suíssa, Ribeirão Pires - SP<br>© 2026 Pet Shop Dr. Japa. Todos os direitos reservados.</footer>
+<footer><b>PET SHOP DR. JAPA</b> • Av. Papa João XXIII, 15 - Suíssa, Ribeirão Pires - SP<br><a href="https://mhfabri.vercel.app">< / mhfabri ></a></footer>
 </body>
 </html>
