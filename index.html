@@ -1,995 +1,1109 @@
+
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#080808">
-<meta name="description" content="Black Friday Pet Shop Dr. Japa">
-<title>Black Friday | Pet Shop Dr. Japa</title>
-
-<style>
-:root {
-  --red: #e50920;
-  --red-dark: #a90012;
-  --black: #080808;
-  --dark: #111111;
-  --card: #181818;
-  --card2: #202020;
-  --white: #ffffff;
-  --muted: #aaaaaa;
-  --line: #303030;
-}
-
-* {
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-  background: var(--black);
-  color: var(--white);
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
-}
-
-.topline {
-  height: 5px;
-  background: linear-gradient(90deg, #111, var(--red), #111);
-}
-
-/* HEADER */
-
-header {
-  background: #101010;
-  border-bottom: 1px solid #292929;
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
-
-.nav {
-  max-width: 1160px;
-  margin: auto;
-  padding: 10px 22px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-}
-
-.brand img {
-  width: 155px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 6px;
-}
-
-.navlinks {
-  display: flex;
-  gap: 24px;
-  font-size: 12px;
-  font-weight: 900;
-}
-
-.navlinks a {
-  transition: .2s;
-}
-
-.navlinks a:hover {
-  color: var(--red);
-}
-
-.nav-cta {
-  background: var(--red);
-  padding: 13px 18px;
-  border-radius: 5px;
-  font-size: 11px;
-  font-weight: 900;
-  transition: .2s;
-}
-
-.nav-cta:hover,
-.btn:hover {
-  transform: translateY(-3px);
-  filter: brightness(1.15);
-}
-
-/* HERO */
-
-.hero {
-  background:
-    radial-gradient(ellipse at 80% 50%, #4a080d 0%, transparent 45%),
-    linear-gradient(120deg, #080808, #171717 65%, #240307);
-  position: relative;
-  overflow: hidden;
-}
-
-.hero:before {
-  content: "BLACK FRIDAY";
-  position: absolute;
-  font-size: clamp(90px, 17vw, 220px);
-  font-weight: 1000;
-  color: rgba(255,255,255,.025);
-  white-space: nowrap;
-  top: 20%;
-  left: 5%;
-  pointer-events: none;
-}
-
-.hero-inner {
-  max-width: 1160px;
-  margin: auto;
-  padding: 75px 22px;
-  display: grid;
-  grid-template-columns: 1.1fr .9fr;
-  align-items: center;
-  gap: 40px;
-  position: relative;
-  z-index: 1;
-}
-
-.eyebrow {
-  display: inline-block;
-  background: var(--red);
-  color: white;
-  padding: 9px 13px;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  border-radius: 3px;
-}
-
-h1 {
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: .92;
-  letter-spacing: -4px;
-  margin: 22px 0;
-  font-weight: 1000;
-  text-transform: uppercase;
-}
-
-h1 span {
-  color: var(--red);
-}
-
-.hero p {
-  color: #c4c4c4;
-  font-size: 17px;
-  line-height: 1.7;
-  max-width: 500px;
-  margin-bottom: 27px;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-}
-
-.btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  padding: 15px 20px;
-  border-radius: 5px;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: .5px;
-  transition: .2s;
-}
-
-.btn-dark {
-  background: var(--red);
-  color: white;
-}
-
-.btn-light {
-  background: white;
-  color: #111;
-}
-
-.hero-logo {
-  background: #171717;
-  border: 1px solid #3b3b3b;
-  padding: 12px;
-  border-radius: 10px;
-  box-shadow: 0 15px 60px rgba(0,0,0,.5);
-  transform: rotate(2deg);
-}
-
-.hero-logo img {
-  display: block;
-  width: 100%;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 5px;
-}
-
-.hero-stamp {
-  position: absolute;
-  right: 8%;
-  bottom: 20px;
-  background: var(--red);
-  color: white;
-  padding: 10px 15px;
-  font-size: 10px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  transform: rotate(-4deg);
-}
-
-/* TICKER */
-
-.ticker {
-  background: var(--red);
-  color: white;
-  overflow: hidden;
-  white-space: nowrap;
-  padding: 13px 0;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  text-align: center;
-}
-
-.ticker span {
-  padding: 0 22px;
-  color: #111;
-}
-
-/* SECTIONS */
-
-.section {
-  max-width: 1160px;
-  margin: auto;
-  padding: 75px 22px;
-}
-
-.section-head {
-  text-align: center;
-  margin-bottom: 38px;
-}
-
-.kicker {
-  color: var(--red);
-  font-size: 11px;
-  letter-spacing: 2px;
-  font-weight: 1000;
-  text-transform: uppercase;
-}
-
-h2 {
-  font-size: clamp(29px, 4vw, 43px);
-  letter-spacing: -1.5px;
-  margin: 12px 0;
-  text-transform: uppercase;
-}
-
-.section-head p {
-  color: var(--muted);
-  font-size: 14px;
-}
-
-/* PRODUCTS */
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-
-.product {
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  overflow: hidden;
-  background: var(--card);
-  display: flex;
-  flex-direction: column;
-  transition: .25s;
-}
-
-.product:hover {
-  transform: translateY(-7px);
-  border-color: var(--red);
-  box-shadow: 0 12px 35px rgba(229,9,32,.13);
-}
-
-.product-visual {
-  height: 235px;
-  background: #222;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-  padding: 15px;
-}
-
-.product-visual img {
-  max-height: 100%;
-  max-width: 100%;
-  object-fit: contain;
-}
-
-.tag {
-  position: absolute;
-  top: 13px;
-  left: 13px;
-  background: var(--red);
-  color: white;
-  padding: 8px 10px;
-  border-radius: 3px;
-  font-size: 9px;
-  font-weight: 1000;
-  letter-spacing: .7px;
-}
-
-.product-info {
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.product-info h3 {
-  font-size: 18px;
-  margin: 0 0 8px;
-}
-
-.desc {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 0 0 18px;
-  min-height: 30px;
-}
-
-.price-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 9px;
-  margin-top: auto;
-}
-
-.price {
-  background: #252525;
-  padding: 12px;
-  border-radius: 6px;
-  border: 1px solid #353535;
-}
-
-.price.best {
-  background: #31090e;
-  border: 1px solid #7d1520;
-}
-
-.price small {
-  display: block;
-  color: #aaa;
-  font-size: 10px;
-  font-weight: 800;
-  margin-bottom: 6px;
-}
-
-.price strong {
-  font-size: 22px;
-}
-
-.price.best strong {
-  color: #ff3349;
-}
-
-.saving {
-  font-size: 11px;
-  color: #42d981;
-  font-weight: 800;
-  margin-top: 12px;
-}
-
-/* PETISCOS */
-
-.treat-card {
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  padding: 25px;
-  background: var(--card);
-  display: grid;
-  grid-template-columns: 190px 1fr;
-  gap: 22px;
-  align-items: center;
-}
-
-.treat-card img {
-  max-width: 100%;
-  max-height: 180px;
-  object-fit: contain;
-}
-
-.treat-card h3 {
-  font-size: 22px;
-  margin: 0 0 8px;
-}
-
-.treat-card p {
-  color: var(--muted);
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.treat-prices {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-
-.pill {
-  background: #350a10;
-  color: #ff5262;
-  border: 1px solid #761521;
-  padding: 9px 11px;
-  border-radius: 5px;
-  font-size: 11px;
-  font-weight: 900;
-}
-
-.notice {
-  margin-top: 20px;
-  background: linear-gradient(110deg, #a90012, #e50920);
-  border-radius: 10px;
-  padding: 27px;
-}
-
-.notice strong {
-  font-size: 24px;
-  line-height: 1.1;
-}
-
-.notice p {
-  font-size: 13px;
-  color: #ffe1e4;
-  line-height: 1.5;
-}
-
-/* ABOUT */
-
-.about {
-  background: #121212;
-  border-top: 1px solid #292929;
-  border-bottom: 1px solid #292929;
-}
-
-.about-grid {
-  max-width: 1160px;
-  margin: auto;
-  padding: 70px 22px;
-  display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 45px;
-  align-items: center;
-}
-
-.about-logo {
-  background: var(--red);
-  padding: 12px;
-  border-radius: 9px;
-  box-shadow: 10px 10px 0 #252525;
-}
-
-.about-logo img {
-  width: 100%;
-  display: block;
-  border: 5px solid white;
-}
-
-.about h2 {
-  text-align: left;
-}
-
-.about p {
-  color: #aaa;
-  line-height: 1.8;
-  font-size: 14px;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.feature {
-  background: #202020;
-  padding: 15px;
-  border-radius: 7px;
-  border-left: 4px solid var(--red);
-  font-size: 12px;
-  font-weight: 800;
-}
-
-/* CONTACT */
-
-.contact {
-  background: #080808;
-}
-
-.contact-inner {
-  max-width: 1160px;
-  margin: auto;
-  padding: 70px 22px;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-
-.contact h2 {
-  color: white;
-}
-
-.contact p {
-  color: #aaa;
-  line-height: 1.7;
-  font-size: 14px;
-}
-
-.contact-list {
-  display: grid;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-.contact-item {
-  padding: 16px;
-  background: #191919;
-  border: 1px solid #292929;
-  border-radius: 7px;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.contact-item b {
-  display: block;
-  color: #ff4658;
-  margin-bottom: 5px;
-}
-
-.hours {
-  background: #191919;
-  border: 1px solid #303030;
-  padding: 25px;
-  border-radius: 9px;
-}
-
-.hours h3 {
-  margin: 0 0 15px;
-}
-
-.hour-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 13px 0;
-  border-bottom: 1px solid #333;
-  font-size: 13px;
-}
-
-.hour-row:last-child {
-  border: 0;
-}
-
-.contact-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-footer {
-  background: #050505;
-  border-top: 1px solid #242424;
-  color: #777;
-  text-align: center;
-  padding: 23px;
-  font-size: 11px;
-  line-height: 1.8;
-}
-
-footer b {
-  color: white;
-}
-
-/* RESPONSIVO */
-
-@media(max-width:800px) {
-  .navlinks {
-    display: none;
-  }
-
-  .hero-inner {
-    grid-template-columns: 1fr;
-    padding-top: 50px;
-  }
-
-  .hero-logo {
-    max-width: 460px;
-    margin: 10px auto;
-  }
-
-  .products {
-    grid-template-columns: repeat(2,1fr);
-  }
-
-  .about-grid,
-  .contact-inner {
-    grid-template-columns: 1fr;
-  }
-
-  .about-logo {
-    max-width: 520px;
-  }
-}
-
-@media(max-width:540px) {
-  .nav {
-    padding: 8px 14px;
-  }
-
-  .brand img {
-    width: 125px;
-    height: 50px;
-  }
-
-  .nav-cta {
-    padding: 11px 12px;
-    font-size: 9px;
-  }
-
-  .hero-inner {
-    padding: 45px 18px 60px;
-  }
-
-  h1 {
-    letter-spacing: -2px;
-  }
-
-  .hero p {
-    font-size: 14px;
-  }
-
-  .hero-logo img {
-    height: 160px;
-  }
-
-  .hero-stamp {
-    right: 5%;
-    bottom: 12px;
-    font-size: 9px;
-  }
-
-  .section {
-    padding: 52px 15px;
-  }
-
-  .products {
-    grid-template-columns: 1fr;
-  }
-
-  .product-visual {
-    height: 225px;
-  }
-
-  .treat-card {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
-
-  .treat-card img {
-    margin: auto;
-    max-height: 170px;
-  }
-
-  .treat-prices {
-    justify-content: center;
-  }
-
-  .features {
-    grid-template-columns: 1fr;
-  }
-
-  .about-grid,
-  .contact-inner {
-    padding: 50px 17px;
-  }
-
-  .hour-row {
-    font-size: 12px;
-  }
-}
-</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#080808">
+    <meta name="description" content="Black Friday Pet Shop Dr. Japa">
+
+    <title>Black Friday | Pet Shop Dr. Japa</title>
+
+    <style>
+        :root {
+            --red: #e50920;
+            --red-dark: #a90012;
+            --black: #080808;
+            --dark: #111111;
+            --card: #181818;
+            --card2: #202020;
+            --white: #ffffff;
+            --muted: #aaaaaa;
+            --line: #303030;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background: var(--black);
+            color: var(--white);
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .topline {
+            height: 5px;
+            background: linear-gradient(90deg, #111, var(--red), #111);
+        }
+
+        /* HEADER */
+
+        header {
+            background: #101010;
+            border-bottom: 1px solid #292929;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+
+        .nav {
+            max-width: 1160px;
+            margin: auto;
+            padding: 10px 22px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .brand img {
+            width: 155px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 6px;
+        }
+
+        .navlinks {
+            display: flex;
+            gap: 24px;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .navlinks a {
+            transition: .2s;
+        }
+
+        .navlinks a:hover {
+            color: var(--red);
+        }
+
+        .nav-cta {
+            background: var(--red);
+            padding: 13px 18px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 900;
+            transition: .2s;
+        }
+
+        .nav-cta:hover,
+        .btn:hover {
+            transform: translateY(-3px);
+            filter: brightness(1.15);
+        }
+
+        /* HERO */
+
+        .hero {
+            background:
+                radial-gradient(ellipse at 80% 50%, #4a080d 0%, transparent 45%),
+                linear-gradient(120deg, #080808, #171717 65%, #240307);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero:before {
+            content: "BLACK FRIDAY";
+            position: absolute;
+            font-size: clamp(90px, 17vw, 220px);
+            font-weight: 1000;
+            color: rgba(255, 255, 255, .025);
+            white-space: nowrap;
+            top: 20%;
+            left: 5%;
+            pointer-events: none;
+        }
+
+        .hero-inner {
+            max-width: 1160px;
+            margin: auto;
+            padding: 75px 22px;
+            display: grid;
+            grid-template-columns: 1.1fr .9fr;
+            align-items: center;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 9px 13px;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            border-radius: 3px;
+        }
+
+        h1 {
+            font-size: clamp(48px, 7vw, 88px);
+            line-height: .92;
+            letter-spacing: -4px;
+            margin: 22px 0;
+            font-weight: 1000;
+            text-transform: uppercase;
+        }
+
+        h1 span {
+            color: var(--red);
+        }
+
+        .hero p {
+            color: #c4c4c4;
+            font-size: 17px;
+            line-height: 1.7;
+            max-width: 500px;
+            margin-bottom: 27px;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 20px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: .5px;
+            transition: .2s;
+        }
+
+        .btn-dark {
+            background: var(--red);
+            color: white;
+        }
+
+        .btn-light {
+            background: white;
+            color: #111;
+        }
+
+        .hero-logo {
+            background: #171717;
+            border: 1px solid #3b3b3b;
+            padding: 12px;
+            border-radius: 10px;
+            box-shadow: 0 15px 60px rgba(0, 0, 0, .5);
+            transform: rotate(2deg);
+        }
+
+        .hero-logo img {
+            display: block;
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .hero-stamp {
+            position: absolute;
+            right: 8%;
+            bottom: 20px;
+            background: var(--red);
+            color: white;
+            padding: 10px 15px;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 1px;
+            transform: rotate(-4deg);
+        }
+
+        /* TICKER */
+
+        .ticker {
+            background: var(--red);
+            color: white;
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 13px 0;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .ticker span {
+            padding: 0 22px;
+            color: #111;
+        }
+
+        /* SECTIONS */
+
+        .section {
+            max-width: 1160px;
+            margin: auto;
+            padding: 75px 22px;
+        }
+
+        .section-head {
+            text-align: center;
+            margin-bottom: 38px;
+        }
+
+        .kicker {
+            color: var(--red);
+            font-size: 11px;
+            letter-spacing: 2px;
+            font-weight: 1000;
+            text-transform: uppercase;
+        }
+
+        h2 {
+            font-size: clamp(29px, 4vw, 43px);
+            letter-spacing: -1.5px;
+            margin: 12px 0;
+            text-transform: uppercase;
+        }
+
+        .section-head p {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* PRODUCTS */
+
+        .products {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .product {
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            overflow: hidden;
+            background: var(--card);
+            display: flex;
+            flex-direction: column;
+            transition: .25s;
+        }
+
+        .product:hover {
+            transform: translateY(-7px);
+            border-color: var(--red);
+            box-shadow: 0 12px 35px rgba(229, 9, 32, .13);
+        }
+
+        .product-visual {
+            height: 235px;
+            background: #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 15px;
+        }
+
+        .product-visual img {
+            max-height: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .tag {
+            position: absolute;
+            top: 13px;
+            left: 13px;
+            background: var(--red);
+            color: white;
+            padding: 8px 10px;
+            border-radius: 3px;
+            font-size: 9px;
+            font-weight: 1000;
+            letter-spacing: .7px;
+        }
+
+        .product-info {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .product-info h3 {
+            font-size: 18px;
+            margin: 0 0 8px;
+        }
+
+        .desc {
+            font-size: 12px;
+            color: var(--muted);
+            margin: 0 0 18px;
+            min-height: 30px;
+        }
+
+        .price-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 9px;
+            margin-top: auto;
+        }
+
+        .price {
+            background: #252525;
+            padding: 12px;
+            border-radius: 6px;
+            border: 1px solid #353535;
+        }
+
+        .price.best {
+            background: #31090e;
+            border: 1px solid #7d1520;
+        }
+
+        .price small {
+            display: block;
+            color: #aaa;
+            font-size: 10px;
+            font-weight: 800;
+            margin-bottom: 6px;
+        }
+
+        .price strong {
+            font-size: 22px;
+        }
+
+        .price.best strong {
+            color: #ff3349;
+        }
+
+        .saving {
+            font-size: 11px;
+            color: #42d981;
+            font-weight: 800;
+            margin-top: 12px;
+        }
+
+        /* PETISCOS */
+
+        .treat-card {
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 25px;
+            background: var(--card);
+            display: grid;
+            grid-template-columns: 190px 1fr;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .treat-card img {
+            max-width: 100%;
+            max-height: 180px;
+            object-fit: contain;
+        }
+
+        .treat-card h3 {
+            font-size: 22px;
+            margin: 0 0 8px;
+        }
+
+        .treat-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .treat-prices {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .pill {
+            background: #350a10;
+            color: #ff5262;
+            border: 1px solid #761521;
+            padding: 9px 11px;
+            border-radius: 5px;
+            font-size: 11px;
+            font-weight: 900;
+        }
+
+        .notice {
+            margin-top: 20px;
+            background: linear-gradient(110deg, #a90012, #e50920);
+            border-radius: 10px;
+            padding: 27px;
+        }
+
+        .notice strong {
+            font-size: 24px;
+            line-height: 1.1;
+        }
+
+        .notice p {
+            font-size: 13px;
+            color: #ffe1e4;
+            line-height: 1.5;
+        }
+
+        /* ABOUT */
+
+        .about {
+            background: #121212;
+            border-top: 1px solid #292929;
+            border-bottom: 1px solid #292929;
+        }
+
+        .about-grid {
+            max-width: 1160px;
+            margin: auto;
+            padding: 70px 22px;
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 45px;
+            align-items: center;
+        }
+
+        .about-logo {
+            background: var(--red);
+            padding: 12px;
+            border-radius: 9px;
+            box-shadow: 10px 10px 0 #252525;
+        }
+
+        .about-logo img {
+            width: 100%;
+            display: block;
+            border: 5px solid white;
+        }
+
+        .about h2 {
+            text-align: left;
+        }
+
+        .about p {
+            color: #aaa;
+            line-height: 1.8;
+            font-size: 14px;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .feature {
+            background: #202020;
+            padding: 15px;
+            border-radius: 7px;
+            border-left: 4px solid var(--red);
+            font-size: 12px;
+            font-weight: 800;
+        }
+
+        /* CONTACT */
+
+        .contact {
+            background: #080808;
+        }
+
+        .contact-inner {
+            max-width: 1160px;
+            margin: auto;
+            padding: 70px 22px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .contact h2 {
+            color: white;
+        }
+
+        .contact p {
+            color: #aaa;
+            line-height: 1.7;
+            font-size: 14px;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .contact-item {
+            padding: 16px;
+            background: #191919;
+            border: 1px solid #292929;
+            border-radius: 7px;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .contact-item b {
+            display: block;
+            color: #ff4658;
+            margin-bottom: 5px;
+        }
+
+        .hours {
+            background: #191919;
+            border: 1px solid #303030;
+            padding: 25px;
+            border-radius: 9px;
+        }
+
+        .hours h3 {
+            margin: 0 0 15px;
+        }
+
+        .hour-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 12px;
+            padding: 13px 0;
+            border-bottom: 1px solid #333;
+            font-size: 13px;
+        }
+
+        .hour-row:last-child {
+            border: 0;
+        }
+
+        .contact-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        footer {
+            background: #050505;
+            border-top: 1px solid #242424;
+            color: #777;
+            text-align: center;
+            padding: 23px;
+            font-size: 11px;
+            line-height: 1.8;
+        }
+
+        footer b {
+            color: white;
+        }
+
+        /* RESPONSIVO */
+
+        @media (max-width: 800px) {
+            .navlinks {
+                display: none;
+            }
+
+            .hero-inner {
+                grid-template-columns: 1fr;
+                padding-top: 50px;
+            }
+
+            .hero-logo {
+                max-width: 460px;
+                margin: 10px auto;
+            }
+
+            .products {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .about-grid,
+            .contact-inner {
+                grid-template-columns: 1fr;
+            }
+
+            .about-logo {
+                max-width: 520px;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .nav {
+                padding: 8px 14px;
+            }
+
+            .brand img {
+                width: 125px;
+                height: 50px;
+            }
+
+            .nav-cta {
+                padding: 11px 12px;
+                font-size: 9px;
+            }
+
+            .hero-inner {
+                padding: 45px 18px 60px;
+            }
+
+            h1 {
+                letter-spacing: -2px;
+            }
+
+            .hero p {
+                font-size: 14px;
+            }
+
+            .hero-logo img {
+                height: 160px;
+            }
+
+            .hero-stamp {
+                right: 5%;
+                bottom: 12px;
+                font-size: 9px;
+            }
+
+            .section {
+                padding: 52px 15px;
+            }
+
+            .products {
+                grid-template-columns: 1fr;
+            }
+
+            .product-visual {
+                height: 225px;
+            }
+
+            .treat-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .treat-card img {
+                margin: auto;
+                max-height: 170px;
+            }
+
+            .treat-prices {
+                justify-content: center;
+            }
+
+            .features {
+                grid-template-columns: 1fr;
+            }
+
+            .about-grid,
+            .contact-inner {
+                padding: 50px 17px;
+            }
+
+            .hour-row {
+                font-size: 12px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="topline"></div>
+    <div class="topline"></div>
 
-<header>
-<nav class="nav">
-<a class="brand" href="#inicio">
-<img src="assets/logo-dr-japa.png" alt="Logo Dr. Japa">
-</a>
+    <!-- HEADER -->
+    <header>
+        <nav class="nav">
 
-<div class="navlinks">
-<a href="#ofertas">OFERTAS</a>
-<a href="#petiscos">PETISCOS</a>
-<a href="#loja">A LOJA</a>
-<a href="#contato">CONTATO</a>
-</div>
+            <a class="brand" href="#inicio">
+                <img src="assets/logo-dr-japa.png" alt="Logo Dr. Japa">
+            </a>
 
-<a class="nav-cta" href="#ofertas">VER PROMOÇÕES ↓</a>
-</nav>
-</header>
+            <div class="navlinks">
+                <a href="#ofertas">OFERTAS</a>
+                <a href="#petiscos">PETISCOS</a>
+                <a href="#loja">A LOJA</a>
+                <a href="#contato">CONTATO</a>
+            </div>
 
-<main>
+            <a class="nav-cta" href="#ofertas">VER PROMOÇÕES ↓</a>
 
-<section class="hero" id="inicio">
-<div class="hero-inner">
+        </nav>
+    </header>
 
-<div>
-<span class="eyebrow">É BLACK FRIDAY NO DR. JAPA</span>
+    <main>
 
-<h1>SEU PET<br>VAI <span>AMAR!</span></h1>
+        <!-- HERO -->
+        <section class="hero" id="inicio">
 
-<p>
-Ofertas especiais em rações e petiscos para cuidar de quem faz parte da família. Aproveite os preços de Black Friday do Pet Shop Dr. Japa!
-</p>
+            <div class="hero-inner">
 
-<div class="hero-actions">
-<a class="btn btn-dark" href="#ofertas">CONFERIR OFERTAS</a>
-<a class="btn btn-light" href="tel:+551148235733">LIGAR PARA A LOJA</a>
-</div>
-</div>
+                <div>
+                    <span class="eyebrow">É BLACK FRIDAY NO DR. JAPA</span>
 
-<div class="hero-logo">
-<img src="assets/logo-dr-japa.png" alt="Pet Shop Dr. Japa">
-</div>
+                    <h1>
+                        SEU PET<br>
+                        VAI <span>AMAR!</span>
+                    </h1>
 
-</div>
+                    <p>
+                        Ofertas especiais em rações e petiscos para cuidar de quem
+                        faz parte da família. Aproveite os preços de Black Friday
+                        do Pet Shop Dr. Japa!
+                    </p>
 
-<div class="hero-stamp">SUÍSSA • RIBEIRÃO PIRES</div>
+                    <div class="hero-actions">
+                        <a class="btn btn-dark" href="#ofertas">
+                            CONFERIR OFERTAS
+                        </a>
+
+                        <a class="btn btn-light" href="tel:+551148235733">
+                            LIGAR PARA A LOJA
+                        </a>
+                    </div>
+                </div>
+
+                <div class="hero-logo">
+                    <img src="assets/logo-dr-japa.png" alt="Pet Shop Dr. Japa">
+                </div>
+
+            </div>
+
+            <div class="hero-stamp">
+                SUÍSSA • RIBEIRÃO PIRES
+            </div>
+
+        </section>
+
+        <!-- FAIXA PROMOCIONAL -->
+        <div class="ticker">
+            BLACK FRIDAY DR. JAPA <span>✦</span>
+            OFERTAS PARA SEU PET <span>✦</span>
+            RAÇÕES E PETISCOS <span>✦</span>
+            BLACK FRIDAY DR. JAPA <span>✦</span>
+        </div>
+
+        <!-- OFERTAS -->
+      <!-- SEÇÃO DE PRODUTOS -->
+<section id="ofertas" class="section">
+    <div class="section-header">
+        <span class="section-tag">BLACK FRIDAY</span>
+        <h2>Ofertas <span>Imperdíveis</span></h2>
+        <p>Garanta a alimentação do seu pet com preços especiais!</p>
+    </div>
+
+    <div class="products-grid">
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="assets/multidog-powerenergy.webp" alt="Multidog PowerEnergy">
+                <span class="discount-badge">OFERTA</span>
+            </div>
+            <div class="product-info">
+                <h3>Multidog PowerEnergy</h3>
+                <p>Ração para cães adultos</p>
+                <span class="product-weight">15 kg</span>
+                <div class="price">
+                    <span>1 saco</span>
+                    <strong>R$ 170,00</strong>
+                </div>
+                <div class="price">
+                    <span>2 sacos</span>
+                    <strong>R$ 310,00</strong>
+                </div>
+                <p class="saving">Economize R$ 30,00 levando 2!</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="assets/multidog-batata-doce-oficial.jpg" alt="Multidog Batata Doce">
+                <span class="discount-badge">OFERTA</span>
+            </div>
+            <div class="product-info">
+                <h3>Multidog Batata Doce</h3>
+                <p>Ração para cães adultos</p>
+                <span class="product-weight">15 kg</span>
+                <div class="price">
+                    <span>1 saco</span>
+                    <strong>R$ 135,00</strong>
+                </div>
+                <div class="price">
+                    <span>2 sacos</span>
+                    <strong>R$ 250,00</strong>
+                </div>
+                <p class="saving">Economize R$ 20,00 levando 2!</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="assets/max-vita-racas-pequenas-oficial.png" alt="Max Vita Raças Pequenas">
+                <span class="discount-badge">OFERTA</span>
+            </div>
+            <div class="product-info">
+                <h3>Max Vita Raças Pequenas</h3>
+                <p>Ração para cães de pequeno porte</p>
+                <span class="product-weight">10 kg</span>
+                <div class="price">
+                    <span>1 saco</span>
+                    <strong>R$ 95,00</strong>
+                </div>
+                <div class="price">
+                    <span>2 sacos</span>
+                    <strong>R$ 180,00</strong>
+                </div>
+                <p class="saving">Economize R$ 10,00 levando 2!</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="assets/nero-churrasco-15kg.jpg" alt="Nero Churrasco">
+                <span class="discount-badge">OFERTA</span>
+            </div>
+            <div class="product-info">
+                <h3>Nero Churrasco</h3>
+                <p>Ração para cães adultos</p>
+                <span class="product-weight">15 kg</span>
+                <div class="price">
+                    <span>1 saco</span>
+                    <strong>R$ 105,00</strong>
+                </div>
+                <div class="price">
+                    <span>2 sacos</span>
+                    <strong>R$ 190,00</strong>
+                </div>
+                <p class="saving">Economize R$ 20,00 levando 2!</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="assets/special-dog-gold-life-10kg.png" alt="Special Dog Gold Life">
+                <span class="discount-badge">OFERTA</span>
+            </div>
+            <div class="product-info">
+                <h3>Special Dog Gold Life</h3>
+                <p>Ração para cães adultos</p>
+                <span class="product-weight">10 kg</span>
+                <div class="price">
+                    <span>1 saco</span>
+                    <strong>R$ 95,00</strong>
+                </div>
+                <div class="price">
+                    <span>2 sacos</span>
+                    <strong>R$ 180,00</strong>
+                </div>
+                <p class="saving">Economize R$ 10,00 levando 2!</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="assets/special-dog-premium-15kg.png" alt="Special Dog Premium">
+                <span class="discount-badge">OFERTA</span>
+            </div>
+            <div class="product-info">
+                <h3>Special Dog Premium</h3>
+                <p>Ração para cães adultos</p>
+                <span class="product-weight">15 kg</span>
+                <div class="price">
+                    <span>1 saco</span>
+                    <strong>R$ 110,00</strong>
+                </div>
+                <div class="price">
+                    <span>2 sacos</span>
+                    <strong>R$ 199,00</strong>
+                </div>
+                <p class="saving">Economize R$ 21,00 levando 2!</p>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-image">
+                <img src="assets/multidog-racas-pequenas-10kg.png" alt="Multidog Raças Pequenas">
+                <span class="discount-badge">OFERTA</span>
+            </div>
+            <div class="product-info">
+                <h3>Multidog Raças Pequenas</h3>
+                <p>Ração para cães de pequeno porte</p>
+                <span class="product-weight">10 kg</span>
+                <div class="price">
+                    <span>1 saco</span>
+                    <strong>R$ 95,00</strong>
+                </div>
+                <div class="price">
+                    <span>2 sacos</span>
+                    <strong>R$ 180,00</strong>
+                </div>
+                <p class="saving">Economize R$ 10,00 levando 2!</p>
+            </div>
+        </div>
+
+    </div>
 </section>
 
-<div class="ticker">
-BLACK FRIDAY DR. JAPA <span>✦</span>
-OFERTAS PARA SEU PET <span>✦</span>
-RAÇÕES E PETISCOS <span>✦</span>
-BLACK FRIDAY DR. JAPA <span>✦</span>
-</div>
 
-<section class="section" id="ofertas">
+<!-- SEÇÃO DE PETISCOS -->
+<section id="petiscos" class="section">
+    <div class="section-header">
+        <span class="section-tag">MIMOS PARA SEU PET</span>
+        <h2>Petiscos <span>Especiais</span></h2>
+        <p>Porque seu melhor amigo também merece um agrado!</p>
+    </div>
 
-<div class="section-head">
-<div class="kicker">PREÇOS ESPECIAIS</div>
-<h2>Ofertas em rações</h2>
-<p>Escolha sua opção e aproveite os preços promocionais.</p>
-</div>
+    <div class="products-grid">
 
-<div class="products">
+        <div class="product-card treat-card">
+            <div class="product-image">
+                <img src="assets/wanpy-creamy-oficial.png" alt="Wanpy Creamy">
+                <span class="discount-badge">OFERTA</span>
+            </div>
 
-<article class="product">
-<div class="product-visual">
-<span class="tag">DESTAQUE BLACK</span>
-<img src="assets/multidog-powerenergy.webp" alt="Multidog PowerEnergy 15kg">
-</div>
+            <div class="product-info">
+                <h3>Wanpy Creamy</h3>
+                <p>Petisco cremoso para gatos</p>
 
-<div class="product-info">
-<h3>Multidog PowerEnergy</h3>
-<p class="desc">30% de proteína • Embalagem de 15 kg</p>
+                <div class="price">
+                    <span>1 unidade</span>
+                    <strong>R$ 5,00</strong>
+                </div>
 
-<div class="price-row">
-<div class="price">
-<small>1 SACO</small>
-<strong>R$ 170</strong>
-</div>
+                <div class="price">
+                    <span>3 unidades</span>
+                    <strong>R$ 10,00</strong>
+                </div>
 
-<div class="price best">
-<small>2 SACOS</small>
-<strong>R$ 310</strong>
-</div>
-</div>
+                <div class="price">
+                    <span>7 unidades</span>
+                    <strong>R$ 20,00</strong>
+                </div>
 
-<div class="saving">Economize R$ 30 levando 2 sacos</div>
-</div>
-</article>
+                <p class="saving">Oferta especial!</p>
+            </div>
+        </div>
 
-<article class="product">
-<div class="product-visual">
-<span class="tag">OFERTA BLACK</span>
-<img src="assets/multidog-batata-doce-oficial.jpg" alt="Multidog Batata Doce">
-</div>
+        <div class="product-card treat-card">
+            <div class="product-image">
+                <img src="assets/wanpy-creamy-oficial.png" alt="Petisco Wanpy para cães">
+                <span class="discount-badge">OFERTA</span>
+            </div>
 
-<div class="product-info">
-<h3>Multidog Batata Doce</h3>
-<p class="desc">23% de proteína • Embalagem de 15 kg</p>
+            <div class="product-info">
+                <h3>Wanpy para Cães</h3>
+                <p>Petisco para cães</p>
 
-<div class="price-row">
-<div class="price">
-<small>1 SACO</small>
-<strong>R$ 135</strong>
-</div>
+                <div class="price">
+                    <span>Pacote com 5 unidades</span>
+                    <strong>R$ 12,00</strong>
+                </div>
 
-<div class="price best">
-<small>2 SACOS</small>
-<strong>R$ 250</strong>
-</div>
-</div>
+                <p class="saving">Seu pet vai adorar!</p>
+            </div>
+        </div>
 
-<div class="saving">Economize R$ 20 levando 2 sacos</div>
-</div>
-</article>
-
-<article class="product">
-<div class="product-visual">
-<span class="tag">OFERTA BLACK</span>
-<img src="assets/max-vita-racas-pequenas-oficial.png" alt="Max Vita Raças Pequenas">
-</div>
-
-<div class="product-info">
-<h3>Max Vita Raças Pequenas</h3>
-<p class="desc">Alimento para cães de raças pequenas • 10 kg</p>
-
-<div class="price-row">
-<div class="price">
-<small>1 SACO</small>
-<strong>R$ 95</strong>
-</div>
-
-<div class="price best">
-<small>2 SACOS</small>
-<strong>R$ 180</strong>
-</div>
-</div>
-
-<div class="saving">Economize R$ 10 levando 2 sacos</div>
-</div>
-</article>
-
-</div>
+    </div>
 </section>
 
-<section class="section" id="petiscos" style="padding-top:10px">
 
-<div class="section-head">
-<div class="kicker">MIMOS PARA SEU COMPANHEIRO</div>
-<h2>Petiscos em promoção</h2>
-<p>Tem opção para cães e gatos. Aproveite os combos!</p>
-</div>
+<!-- SEÇÃO SOBRE A LOJA -->
+<section id="loja" class="section about-section">
+    <div class="section-header">
+        <span class="section-tag">CONHEÇA NOSSA LOJA</span>
+        <h2>Sobre o <span>Dr. Japa</span></h2>
+    </div>
 
-<article class="treat-card">
+    <div class="about-content">
+        <p>
+            No Pet Shop Dr. Japa, você encontra produtos de qualidade
+            para cuidar de quem faz parte da sua família.
+            Trabalhamos com rações, petiscos e diversos produtos
+            para garantir o bem-estar do seu melhor amigo.
+        </p>
 
-<img src="assets/wanpy-creamy-oficial.png" alt="Creamy Wanpy">
-
-<div>
-<h3>Creamy Wanpy</h3>
-<p>Opções para gatos e cachorros. Consulte os sabores disponíveis na loja.</p>
-
-<div class="treat-prices">
-<span class="pill">1 un. R$ 5</span>
-<span class="pill">3 un. R$ 10</span>
-<span class="pill">7 un. R$ 20</span>
-<span class="pill">Cães: pacote c/ 5 un. R$ 12</span>
-</div>
-</div>
-
-</article>
-
-<aside class="notice">
-<strong>MAIS UNIDADES,<br>MAIS ECONOMIA!</strong>
-<p>Monte seu combo de petiscos e aproveite os valores especiais de Black Friday do Dr. Japa.</p>
-</aside>
-
+        <p>
+            Aproveite nossas ofertas especiais de Black Friday
+            e venha conferir nossos produtos!
+        </p>
+    </div>
 </section>
 
-<section class="about" id="loja">
 
-<div class="about-grid">
+<!-- SEÇÃO DE CONTATO -->
+<section id="contato" class="section contact-section">
+    <div class="section-header">
+        <span class="section-tag">VENHA NOS VISITAR</span>
+        <h2>Entre em <span>Contato</span></h2>
+        <p>Estamos esperando por você e pelo seu pet!</p>
+    </div>
 
-<div class="about-logo">
-<img src="assets/logo-dr-japa.png" alt="Pet Shop Dr. Japa">
-</div>
+    <div class="contact-grid">
 
-<div>
-<div class="kicker">TRADIÇÃO NO BAIRRO SUÍSSA</div>
+        <div class="contact-card">
+            <h3>📍 Endereço</h3>
+            <p>
+                Av. Papa João XXIII, 15 - Suíssa,
+                Ribeirão Pires - SP, 09421-540
+            </p>
+        </div>
 
-<h2>Quem ama, cuida. Quem cuida, vem ao Dr. Japa!</h2>
+        <div class="contact-card">
+            <h3>📞 Telefone</h3>
+            <p>(11) 4823-5733</p>
+        </div>
 
-<p>
-O Pet Shop Dr. Japa atende tutores de Ribeirão Pires com variedade de rações, petiscos, produtos de higiene, medicamentos e acessórios para os pets. Conte com orientação na hora de escolher o que seu companheiro precisa.
-</p>
+        <div class="contact-card">
+            <h3>🕒 Horário de Funcionamento</h3>
+            <p>Segunda a sábado: 08h às 20h</p>
+            <p>Domingo: 08h às 14h</p>
+        </div>
 
-<div class="features">
-<div class="feature">🐾 Rações e petiscos</div>
-<div class="feature">🧼 Higiene e cuidados</div>
-<div class="feature">💊 Itens de saúde pet</div>
-<div class="feature">🚚 Opção de entrega</div>
-</div>
+    </div>
 
-</div>
-</div>
+    <div class="contact-button">
+        <a href="https://www.google.com/maps/search/?api=1&query=Av.+Papa+Joao+XXIII+15+Suissa+Ribeirao+Pires"
+           target="_blank">
+            Como chegar
+        </a>
+    </div>
 </section>
 
-<section class="contact" id="contato">
 
-<div class="contact-inner">
+<!-- RODAPÉ -->
+<footer class="footer">
+    <div class="footer-content">
 
-<div>
-<div class="kicker">VEM PRO DR. JAPA</div>
-<h2>Esperamos por você!</h2>
+        <img src="assets/logo-dr-japa.png" alt="Pet Shop Dr. Japa">
 
-<p>Faça uma visita, consulte a disponibilidade das ofertas e pergunte sobre entrega.</p>
+        <p>
+            Cuidando de quem faz parte da sua família!
+        </p>
 
-<div class="contact-list">
+        <span>
+            © 2026 Pet Shop Dr. Japa. Todos os direitos reservados.
+        </span>
 
-<div class="contact-item">
-<b>📍 ENDEREÇO</b>
-Av. Papa João XXIII, 15 - Suíssa<br>
-Ribeirão Pires - SP, 09421-540
-</div>
+        <p class="developer">
+            Desenvolvido por
+            <a href="https://mhfabri.vercel.app" target="_blank">
+                MH Fabri
+            </a>
+        </p>
 
-<div class="contact-item">
-<b>☎ TELEFONE</b>
-(11) 4823-5733
-</div>
-
-<div class="contact-item">
-<b>💳 PAGAMENTO</b>
-Cartão de crédito, débito e aproximação (NFC).
-</div>
-
-</div>
-
-<div class="contact-buttons">
-<a class="btn btn-light" href="tel:+551148235733">LIGAR AGORA</a>
-
-<a class="btn btn-dark" target="_blank" rel="noopener"
-href="https://www.google.com/maps/search/?api=1&query=Av.+Papa+Joao+XXIII,+15,+Suissa,+Ribeirao+Pires,+SP">
-ABRIR LOCALIZAÇÃO
-</a>
-</div>
-</div>
-
-<div class="hours">
-<h3>⏰ Horário de funcionamento</h3>
-
-<div class="hour-row">
-<span>Segunda a sábado</span>
-<b>08h às 20h</b>
-</div>
-
-<div class="hour-row">
-<span>Domingo</span>
-<b>08h às 14h</b>
-</div>
-
-<p style="font-size:11px;color:#888;margin:16px 0 0">
-Consulte a loja para confirmar disponibilidade e condições das promoções.
-</p>
-</div>
-
-</div>
-</section>
-
-</main>
-
-<footer>
-<b>PET SHOP DR. JAPA</b> • Av. Papa João XXIII, 15 - Suíssa, Ribeirão Pires - SP<br>
-<a href="https://mhfabri.vercel.app">&lt; / mhfabri &gt;</a>
+    </div>
 </footer>
 
 </body>
 </html>
+        
